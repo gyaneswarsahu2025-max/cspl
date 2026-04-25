@@ -1,704 +1,1003 @@
-<footer id="contact" class="site-footer  ">
-    <div class="container  ">
-        <div class="footer-shell reveal-on-scroll">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <a class="brand-mark-2 mx-auto" href="#home" aria-label="Interior Atelier home">
-                        <div class="logo-2">
-                            <img src="<?= base_url('website_assets/img/logo-n.png') ?>" alt="Logo">
-                        </div>
-                    </a>
-                    <div>
-                        <!-- <p class="footer-kicker"> INTERIOR DESIGN STUDIO </p> -->
-                        <h2 class="text-gold">Designing layered interiors with calm luxury and lasting character.</h2>
-                        <p class="footer-blurb">
-                          HARV Atelier Interior Design Studio for residential, hospitality, and styling projects crafted
-                            with
-                            timeless materials, soft contrast, and editorial restraint.
-                        </p>
+ 
+<style>
+        footer {
+          
+        }
+        
+      .footer {
+  background: url('https://images.pexels.com/photos/7078630/pexels-photo-7078630.jpeg')
+              center center / cover no-repeat fixed;
+  position: relative;
+  padding: 100px 0;
+  color: #fff;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+ background: #000;
+ opacity: 0.5;
+  z-index: 1;
+}
+
+.footer .container {
+  position: relative;
+  z-index: 2;
+}
+        
+        /*      */
+        .footer h5 {
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .footer h5::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 50px;
+            height: 2px;
+            background: #fff;
+        }
+        
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer ul li a:hover {
+            color: #fff;
+            text-decoration: none;
+            transform: translateX(5px);
+        }
+        
+        .footer ul li a i {
+            margin-right: 8px;
+            width: 16px;
+        }
+        
+        .social-links {
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-blue);
+            color: #ecf0f1;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background:    var(--primary-orange)  ;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .contact-info-footer {
+          
+            margin-top: 0;
+            padding-top: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .contact-info-footer p {
+            margin-bottom: 0.8rem;
+            color: #fff;
+        }
+        
+        .contact-info-footer i {
+            color: #fff;
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        .footer-bottom {
+            background: #1a252f;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+            border-top: 1px solid #34495e;
+        }
+        
+        .footer-bottom p {
+            margin: 0;
+            color: #95a5a6;
+            text-align: center;
+        }
+        
+        .newsletter-form {
+            margin-top: 1rem;
+        }
+        
+        .newsletter-form .input-group {
+            margin-bottom: 1rem;
+        }
+        
+        .newsletter-form .form-control {
+            background: #34495e;
+            border: 1px solid #34495e;
+            color: #fff;
+        }
+        
+        .newsletter-form .form-control:focus {
+            background: #34495e;
+            border-color: #fff;
+            color: #fff;
+            box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+        }
+        
+        .newsletter-form .form-control::placeholder {
+            color: #fff;
+        }
+        
+        .btn-newsletter {
+            background: #fff;
+            border: 1px solid #fff;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-newsletter:hover {
+            background: #2980b9;
+            border-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+
+            .footer h5::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 100%;
+            height: 2px;
+            background: #fff;
+        }
+            .footer {
+                text-align: left;
+            }
+            
+            .footer h5::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .social-links {
+                text-align: left;
+            }
+            
+            .footer ul li a:hover {
+                transform: none;
+            }
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: #00e0c6;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .back-to-top:hover {
+            background-color: #00c4ad;
+        }
+        
+        @media (max-width: 767px) {
+            .footer-section {
+                margin-bottom: 30px;
+            }
+        }
+
+    .arrow-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.arrow-list li{
+    margin-bottom:12px;
+}
+
+.arrow-list li a{
+    color:#fff;
+    font-size:18px;
+    text-decoration:none;
+    position:relative;
+    padding-left:28px;
+    transition:.3s ease;
+}
+
+/* dynamic arrow */
+.arrow-list li a::before{
+    content:"»";
+    position:absolute;
+    left:0;
+    top:0;
+    font-size:22px;
+    transition:transform .3s ease;
+}
+
+/* animate on hover */
+.arrow-list li:hover a::before{
+    transform:translateX(6px);
+}
+
+.arrow-list li:hover a{
+    color:#00c4f4;
+}
+
+.subscribe-box{
+    max-width:420px;
+}
+
+.subscribe-input{
+    width:100%;
+    padding:14px 18px;
+    border-radius:12px;
+    border:none;
+    outline:none;
+    font-size:16px;
+    margin-bottom:14px;
+}
+
+.subscribe-row{
+    display:flex;
+    gap:12px;
+    margin-bottom:14px;
+}
+
+.subscribe-input.small{
+    flex:1;
+}
+
+.captcha-box{
+    padding:10px 10px;
+   
+    background:#fff;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    font-weight:700;
+    color:#1db6ff;
+    font-family:cursive;
+}
+
+.subscribe-btn{
+    background:#00bfff;
+    border:none;
+    color:#fff;
+    padding:14px 20px;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s ease;
+}
+
+.subscribe-btn:hover{
+    background:#009edc;
+}
+
+    </style>
+
+
+    </div>  </div>
+  
+
+  <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Company Info -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 ">
+                    <div class=" contact-info-footer  ">
+                        <a href="index.php">
+                        <img alt="Porto" width="100%" height="80px"  src="<?= base_url('website_assets/img/cspl-logo.png') ?>" class="my-4">
+                        </a>
+                   
+
+                    <p><i class="fas fa-map"></i>
+
+Ward 45 Flat no-21,  Metro Cottage, Chintamaniswar Temple Road, Chintamaniswar, Laxmisagar,
+ Bhubaneswar -751006 , INDIA
+
+
+
+
+
+
+</p>
+          <p><i class="fas fa-phone "></i>+91-8480701080  |  +91-9437368484   </p>
+
+
+           <p><i class="fas fa-envelope"></i>cakiweb.com@gmail.com    </p>                
+<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119874.00528825134!2d85.48242124335935!3d20.13143310000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19addb58b2b4a9%3A0x5270b2b623a9b536!2sSwami%20Vivekananda%20Institute%20of%20Management!5e0!3m2!1sen!2sin!4v1756467511231!5m2!1sen!2sin" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                            </div>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
-                <a href="humshi@harvatelier.com" class="footer-cta text-lowercase">humshi@harvatelier.com</a>
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0 col-6 ">
+                    <h5>Quick Links</h5>
+                    <ul class="arrow-list">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Contact Us</a></li>
+     <li><a href="#">About Us</a></li>
+      <li><a href="#">Pricing</a></li>
+    <li><a href="#">Blogs</a></li>
+    
+</ul>
+
+                </div>
+
+                <!-- Services -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 col-6">
+                    <h5>Policies</h5>
+                     <ul class="arrow-list"> 
+                        <li><a href="#">Term & Conditions</a></li>
+    <li><a href="#">Privacy Policy</a></li>
+    <li><a href="#">Refund Return Policy</a></li>
+
+    <li><a href="#">Sitemap</a></li>
+                        
+                    </ul> 
+                </div>
+
+                <!-- Contact & Newsletter -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Our Newsletter</h5>
+                    <div class="contact-info-footer ">
+                      
+                        <p class="fw-normal"> 
+
+Our latest news, articles, and offers, we will sent to your inbox weekly.
+
+
+
+
+
+</p>
+
+                      <div class="subscribe-box">
+    <input type="email" class="subscribe-input" placeholder="Enter Your Email">
+
+    <div class="subscribe-row">
+        <input type="text" class="subscribe-input small" placeholder="Enter Captcha">
+
+        <input type="text" class="subscribe-input small" placeholder="123456" readonly>
+    </div>
+
+    <button class="subscribe-btn">
+        SUBSCRIBE <i class="fas fa-paper-plane ml-2"></i>
+    </button>
+</div>
+
+                         
+                    </div>
+                    
+                    <!--<h5 class="mt-4">Newsletter</h5>-->
+                    <!--<p class="text-light">Subscribe to get updates on our latest offers and news.</p>-->
+                    <!--<form class="newsletter-form">-->
+                    <!--    <div class="input-group">-->
+                    <!--        <input type="email" class="form-control" placeholder="Your email address" required>-->
+                    <!--        <div class="input-group-append">-->
+                    <!--            <button class="btn btn-newsletter" type="submit">-->
+                    <!--                <i class="fas fa-paper-plane"></i>-->
+                    <!--            </button>-->
+                    <!--        </div>-->
+                    <!--    </div>-->
+                    <!--</form>-->
+                </div>
             </div>
 
-            <div class="footer-grid">
-                <div class="footer-card">
-                    <span class="footer-label">Studio</span>
-                    <p><b class="  text-no-style "> HARV ATELIER  </b>   <br>  (INTERIOR DESIGN STUDIO) </p>
-                    <p>Koramangala, Bangalore</p>
-                    <!-- <p>Mumbai, Maharashtra 400005</p> -->
-                    <p>India</p>
-                </div>
-
-                <div class="footer-card">
-                    <span class="footer-label">Contact</span>
-                    <a href="tel:+919876543210" class="text-gold fw-bold">+91  94495-46202</a>
-                    <a href="humshi@harvatelier.com"  class="text-gold fw-bold">humshi@harvatelier.com</a>
-                    <a href="#projects">Recent Portfolio</a>
-                    <a href="#services">Design Services</a>
-                </div>
 
 
-                <div class="footer-card">
-                    <span class="footer-label">Hours</span>
-                    <p>Monday - Sunday</p>
-                    <p>10:00 AM - 7:00 PM</p>
-                    <!-- <p>Saturday</p>
-                    <p>11:00 AM - 4:00 PM</p> -->
-                </div>
 
-                <div class="footer-card">
-                    <span class="footer-label">Follow</span>
-                    <a href="#home"><i class="fab fa-instagram"></i> Instagram</a>
+<div class="row my-3 ">
+    <div class="col-12 my-3 ">
 
-                    <a href="#projects"><i class="fab fa-pinterest"></i> Pinterest</a>
+        <div class="trusted-heading-wrap">
+   <h2 class="trusted-heading glow-animate">
+      Our Modules 
+   </h2>
+</div>
 
-                    <a href="#about"><i class="fas fa-book-open"></i> Design Journal</a>
+    </div>
+               <!-- Footer Links -->
 
-                    <a href="#contact"><i class="fas fa-calendar-check"></i> Book Consultation</a>
-                </div>
+<!-- Column 1 -->
+<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+  <ul class="arrow-list">
+    <li><a href="#">HRMS & Payroll</a></li>
+    <li><a href="#">CRM</a></li>
+    <li><a href="#">Financial Accounting</a></li>
+    <li><a href="#">Task Management</a></li>
+    <li><a href="#">Tender Management</a></li>
+  </ul>
+</div>
+
+<!-- Column 2 -->
+<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+  <ul class="arrow-list">
+    <li><a href="#">Inventory Management</a></li>
+    <li><a href="#">Asset Management</a></li>
+    <li><a href="#">Vehicle Management</a></li>
+    <li><a href="#">Project Management</a></li>
+    <li><a href="#">Purchase Management</a></li>
+  </ul>
+</div>
+
+<!-- Column 3 -->
+<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+  <ul class="arrow-list">
+    <li><a href="#">Location Tracking</a></li>
+    <li><a href="#">Document Management</a></li>
+    <li><a href="#">Documentation</a></li>
+    <li><a href="#">Vendor Portal</a></li>
+    <li><a href="#">Client Portal</a></li>
+  </ul>
+</div>
+
+<!-- Column 4 -->
+<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+  <ul class="arrow-list">
+    <li><a href="#">Support Ticketing System</a></li>
+  
+    <li><a href="#">Pricing</a></li>
+    
+  </ul>
+</div>
+
+               
             </div>
 
-            <div class="footer-bottom">
-                <p>&copy; <?php echo date("Y"); ?> <a  href="https://harvatelier.com/" class="text-gold fw-bold">  HARV Atelier Interior Design </a>. Crafted for elevated living. <br>
-                 Design By 
-                <a href="https://cakiweb.com"  class="text-gold fw-bold" target="__blank">Cakiweb Solutions Private Limited </a> </p>
-                <div class="footer-bottom-links">
-                    <a href="<?= site_url('Site/aboutus') ; ?>">About</a>
-                    <a href="<?= site_url('Site/Projects') ; ?>">Projects</a>
-                    <a href="<?= site_url('Site/Contact') ; ?>">Contact</a>
-                      <a href="<?= site_url('Site/Blog') ; ?>">Blogs</a>
+
+<div class="row my-3 ">
+    <div class="col-12 my-3 ">
+
+        <div class="trusted-heading-wrap">
+   <h2 class="trusted-heading glow-animate">
+     Areas We Serve
+   </h2>
+</div>
+
+    </div>
+               <!-- Footer Links -->
+
+<!-- Column 1 -->
+<div class="col-lg-3 col-md-6 mb-4 mb-lg-0 col-6 ">
+  <ul class="arrow-list">
+    <li><a href="#">Mumbai</a></li>
+    <li><a href="#">Delhi</a></li>
+    <li><a href="#">Bengaluru</a></li>
+    <li><a href="#">Kolkata</a></li>
+    <li><a href="#">Chennai</a></li>
+  </ul>
+</div>
+
+<!-- Column 2 -->
+<div class="col-lg-3 col-md-6 mb-4 mb-lg-0 col-6">
+  <ul class="arrow-list">
+    <li><a href="#">Hyderabad</a></li>
+    <li><a href="#">Pune</a></li>
+    <li><a href="#">Ahmedabad</a></li>
+    <li><a href="#">Jaipur</a></li>
+    <li><a href="#">Lucknow</a></li>
+  </ul>
+</div>
+
+<!-- Column 3 -->
+<div class="col-lg-3 col-md-6 mb-4 mb-lg-0 col-6 ">
+  <ul class="arrow-list">
+    <li><a href="#">Kanpur</a></li>
+    <li><a href="#">Nagpur</a></li>
+    <li><a href="#">Indore</a></li>
+    <li><a href="#">Thane</a></li>
+    <li><a href="#">Bhopal</a></li>
+  </ul>
+</div>
+
+<!-- Column 4 -->
+<div class="col-lg-3 col-md-6 mb-4 mb-lg-0 col-6">
+  <ul class="arrow-list">
+    <li><a href="#">Visakhapatnam</a></li>
+    <li><a href="#">Patna</a></li>
+    <li><a href="#">Vadodara</a></li>
+    <li><a href="#">Ghaziabad</a></li>
+    <li><a href="#">Ludhiana</a></li>
+  </ul>
+</div>
+
+
+               
+            </div>
+
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <p>&copy;<?php echo date("Y"); ?> © All rights reserved by CSPL ERP ,<a href="https://cakiweb.com/" target="__blank"> (Unit of Cakiweb Solution)</a></p>
+                    </div>
+                    <div class="col-md-6 d-none ">
+                        <p class="text-md-right">
+                            <a href="#" class="text-muted mr-3">Privacy Policy</a>
+                            <a href="#" class="text-muted mr-3">Terms of Service</a>
+                            <a href="#" class="text-muted">Sitemap</a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
 
-
-
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/all.min.js"></script>
-<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script src="<?= base_url('') ; ?>vendor/jquery/jquery.min.js"></script>
-<script src="<?= base_url('') ; ?>vendor/jquery.appear/jquery.appear.min.js"></script>
-<script src="<?= base_url('') ; ?>vendor/jquery.easing/jquery.easing.min.js"></script>
-<script src="<?= base_url('') ; ?>vendor/jquery.cookie/jquery.cookie.min.js"></script>
-<script src="<?= base_url('') ; ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="<?= base_url('') ; ?>vendor/jquery.validation/jquery.validate.min.js"></script>
-<script src="<?= base_url('') ; ?>vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
-<script src="<?= base_url('') ; ?>vendor/jquery.gmap/jquery.gmap.min.js"></script>
-<script src="<?= base_url('') ; ?>vendor/lazysizes/lazysizes.min.js"></script>
-<script src="<?= base_url('') ; ?>vendor/isotope/jquery.isotope.min.js"></script>
-<script src="<?= base_url('') ; ?>vendor/owl.carousel/owl.carousel.min.js"></script>
-<script src="<?= base_url('') ; ?>vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-<script src="<?= base_url('') ; ?>vendor/vide/jquery.vide.min.js"></script>
-<script src="<?= base_url('') ; ?>vendor/vivus/vivus.min.js"></script>
-<script src="<?= base_url('') ; ?>js/demos/demo-real-estate.js"></script>
-<!-- Theme Base, Components and Settings -->
-
-<!-- Current Page Vendor and Views -->
-
-<!-- Demo -->
-
-
-
-<!-- Theme Base, Components and Settings -->
-<script src="<?= base_url('') ; ?>js/theme.js"></script>
-
-<!-- Current Page Vendor and Views -->
-<script src="<?= base_url('') ; ?>js/views/view.contact.js"></script>
-
-<!-- Demo -->
-<script src="<?= base_url('') ; ?>js/demos/demo-real-estate.js"></script>
-
-<!-- Theme Initialization Files -->
-<script src="<?= base_url('') ; ?>js/theme.init.js"></script>
-<!-- Theme Initialization Files -->
-<script src="<?= base_url('') ; ?>js/theme.init.js"></script>
-<script defer src="../../../../static.cloudflareinsights.com/beacon.min.js"
-    data-cf-beacon='{"rayId":"699d277a9ee30da4","version":"2021.9.0","r":1,"token":"03fa3b9eb60b49789931c4694c153f9b","si":100}'></script>
-<!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
-<script>
+        <!-- Back to Top Button -->
+       <!--  <div class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </div> -->
+    </footer>
  
-  gsap.registerPlugin(TextPlugin);
 
-  const texts = [
-    "Luxury Interior Design",
-    "Elegant Living Spaces",
-    "Timeless Aesthetics"
-  ];
 
-  let index = 0;
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+       <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-  function typeLoop() {
-    // Type text
-    gsap.to(".typing-text", {
-      duration: 2,
-      text: texts[index],
-      ease: "none",
-      onComplete: () => {
-        
-        // Pause after typing
-        setTimeout(() => {
+    <script>
+  // Your YouTube Video ID
+  const YOUTUBE_VIDEO_ID = 'cAFb_7wUvPk';
+  
+  // Entrance animation on scroll
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
 
-          // Delete text
-          gsap.to(".typing-text", {
-            duration: 1,
-            text: "",
-            ease: "none",
-            onComplete: () => {
-              index = (index + 1) % texts.length;
-              typeLoop(); // loop again
-            }
-          });
+    document.querySelectorAll(".animate-on-scroll").forEach(el => observer.observe(el));
+  });
 
-        }, 1200);
-
-      }
-    });
+  // Open Video Modal
+  function openVideo() {
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('youtubeFrame');
+    
+    // Set YouTube embed URL with autoplay and your video ID
+    iframe.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0&modestbranding=1&enablejsapi=1`;
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
   }
 
-  typeLoop();
- 
+  // Close Video Modal
+  function closeVideo() {
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('youtubeFrame');
+    
+    modal.classList.remove('active');
+    setTimeout(() => {
+      iframe.src = ''; // Stop video after animation
+    }, 300);
+    document.body.style.overflow = ''; // Restore scrolling
+  }
 
+  // Close on backdrop click
+  function closeVideoOnBackdrop(event) {
+    if (event.target === event.currentTarget) {
+      closeVideo();
+    }
+  }
 
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeVideo();
+    }
+  });
+</script>
+    <script>
+        $(document).ready(function() {
+            
+            // Sticky header shadow on scroll
+            $(window).on('scroll', function() {
+                if ($(window).scrollTop() > 10) {
+                    $('#mainHeader').addClass('scrolled');
+                } else {
+                    $('#mainHeader').removeClass('scrolled');
+                }
+            });
 
+            // Mobile menu toggle
+            $('#mobileMenuToggle').on('click', function() {
+                $('#mobileOffcanvas').addClass('active');
+                $('#mobileOverlay').addClass('active');
+                $('body').css('overflow', 'hidden');
+            });
 
+            // Close mobile menu
+            function closeMobileMenu() {
+                $('#mobileOffcanvas').removeClass('active');
+                $('#mobileOverlay').removeClass('active');
+                $('body').css('overflow', 'auto');
+            }
 
+            $('#mobileCloseBtn').on('click', closeMobileMenu);
+            $('#mobileOverlay').on('click', closeMobileMenu);
 
+            // Mobile dropdown toggles
+            $('#mobileProductsToggle').on('click', function() {
+                $('#mobileProductsDropdown').toggleClass('show');
+                $(this).find('i.fa-chevron-down').toggleClass('fa-rotate-180');
+            });
 
+            $('#mobileSolutionsToggle').on('click', function() {
+                $('#mobileSolutionsDropdown').toggleClass('show');
+                $(this).find('i.fa-chevron-down').toggleClass('fa-rotate-180');
+            });
 
+            $('#mobileResourcesToggle').on('click', function() {
+                $('#mobileResourcesDropdown').toggleClass('show');
+                $(this).find('i.fa-chevron-down').toggleClass('fa-rotate-180');
+            });
 
+            // Close mobile menu when clicking a link
+            $('.mobile-nav-link').on('click', function() {
+                if (!$(this).parent().hasClass('mobile-nav-item') || !$(this).hasClass('mobile-nav-link') || !$(this).next('.mobile-dropdown').length) {
+                    setTimeout(closeMobileMenu, 200);
+                }
+            });
 
+            // Smooth scroll for anchor links
+            $('a[href^="#"]').on('click', function(e) {
+                const href = $(this).attr('href');
+                if (href !== '#' && $(href).length) {
+                    e.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: $(href).offset().top - 80
+                    }, 400);
+                }
+            });
 
-    $(document).ready(function () {
-        const $slider = $('.luxury-slider');
-        const $slides = $('.slide');
-        const $dotsContainer = $('.slider-dots');
-        let currentSlide = 0;
-        let autoPlayTimer;
-        const delay = 6000; // 6 seconds per slide
-
-        // Generate dots
-        $slides.each(function (i) {
-            $dotsContainer.append(`<div class="dot${i === 0 ? ' active' : ''}" data-index="${i}"></div>`);
         });
-        const $dots = $('.dot');
+    </script>
+     <script>
+        // Initialize AOS Animation Library
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
 
-        // Navigation logic
-        function goToSlide(index) {
-            if (index < 0) index = $slides.length - 1;
-            if (index >= $slides.length) index = 0;
+        // Custom Scroll Animations
+        $(document).ready(function() {
+            
+            // Observe elements for fade-up animation
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
 
-            $slides.removeClass('active');
-            $slides.eq(index).addClass('active');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
 
-            $dots.removeClass('active');
-            $dots.eq(index).addClass('active');
+            // Observe all fade-up elements
+            document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
 
-            currentSlide = index;
+            // Form submission handler
+            $('.email-form').on('submit', function(e) {
+                e.preventDefault();
+                const email = $(this).find('.form-control-custom').val();
+                
+                // Add loading state
+                const $btn = $(this).find('.btn-book-demo');
+                const originalText = $btn.text();
+                $btn.text('Submitting...').prop('disabled', true);
+                
+                // Simulate API call
+                setTimeout(() => {
+                    $btn.html('<i class="fas fa-check"></i> Demo Requested!').css('background', '#FFAC1C');
+                    
+                    // Reset after 3 seconds
+                    setTimeout(() => {
+                        $btn.text(originalText).prop('disabled', false).css('background', '');
+                        $(this).find('.form-control-custom').val('');
+                    }, 3000);
+                }, 1500);
+            });
+
+            // Parallax effect on mouse move for illustration
+            $(document).on('mousemove', function(e) {
+                const mouseX = e.clientX / window.innerWidth - 0.5;
+                const mouseY = e.clientY / window.innerHeight - 0.5;
+                
+                $('.isometric-illustration').css({
+                    transform: `translateY(-10px) rotateY(${-15 + mouseX * 10}deg) rotateX(${5 - mouseY * 10}deg)`
+                });
+            });
+
+            // Smooth scroll behavior for anchor links
+            $('a[href^="#"]').on('click', function(e) {
+                e.preventDefault();
+                const target = $(this.getAttribute('href'));
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - 80
+                    }, 800);
+                }
+            });
+
+            // Add active class to current nav item
+            $(window).on('scroll', function() {
+                let current = '';
+                $('section').each(function() {
+                    const sectionTop = $(this).offset().top;
+                    const sectionHeight = $(this).height();
+                    if (pageYOffset >= (sectionTop - 200)) {
+                        current = $(this).attr('id');
+                    }
+                });
+            });
+        });
+
+        // Counter animation for statistics
+        function animateValue(element, start, end, duration, prefix = '', suffix = '') {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                element.text(prefix + value + suffix);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
         }
 
-        function nextSlide() { goToSlide(currentSlide + 1); }
-        function prevSlide() { goToSlide(currentSlide - 1); }
-
-        // Auto-play
-        function startAutoPlay() {
-            stopAutoPlay();
-            autoPlayTimer = setInterval(nextSlide, delay);
-        }
-
-        function stopAutoPlay() { clearInterval(autoPlayTimer); }
-
-        // Event Listeners
-        $('.nav-btn.next').on('click', () => { nextSlide(); startAutoPlay(); });
-        $('.nav-btn.prev').on('click', () => { prevSlide(); startAutoPlay(); });
-        $dots.on('click', function () { goToSlide($(this).data('index')); startAutoPlay(); });
-
-        // Keyboard navigation
-        $(document).on('keydown', (e) => {
-            if (e.key === 'ArrowRight') { nextSlide(); startAutoPlay(); }
-            if (e.key === 'ArrowLeft') { prevSlide(); startAutoPlay(); }
-        });
-
-        // Pause on hover / touch
-        $slider.on('mouseenter', stopAutoPlay).on('mouseleave', startAutoPlay);
-
-        // Basic swipe support
-        let touchStartX = 0;
-        $slider.on('touchstart', e => {
-            touchStartX = e.originalEvent.changedTouches[0].screenX;
-            stopAutoPlay();
-        });
-
-        $slider.on('touchend', e => {
-            const touchEndX = e.originalEvent.changedTouches[0].screenX;
-            const diff = touchStartX - touchEndX;
-            if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide();
-            startAutoPlay();
-        });
-
-        // Initialize
-        startAutoPlay();
-    });
-
-    $(document).ready(function () {
-        // ─── Scroll Reveal Animation ───
-        const revealElements = document.querySelectorAll('.reveal');
-
-        const revealObserver = new IntersectionObserver((entries) => {
+        // Trigger counter animation when stats are visible
+        const statsObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const delay = parseInt(entry.target.getAttribute('data-delay')) || 0;
-                    setTimeout(() => {
-                        entry.target.classList.add('is-visible');
-
-                        // Animate counters if it's a stat number
-                        const counters = entry.target.querySelectorAll('.stat-number');
-                        counters.forEach(counter => {
-                            animateCounter(counter);
-                        });
-                    }, delay);
-
-                    revealObserver.unobserve(entry.target);
+                    const statValue = entry.target.querySelector('.stat-value');
+                    const text = statValue.text();
+                    if (text.includes('%')) {
+                        animateValue(statValue, 0, 75.2, 2000, '', '%');
+                    } else if (text.includes('k')) {
+                        animateValue(statValue, 0, 20, 2000, '~', 'k');
+                    }
+                    statsObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+        }, { threshold: 0.5 });
 
-        revealElements.forEach(el => revealObserver.observe(el));
+        document.querySelectorAll('.stat-item').forEach((el) => statsObserver.observe(el));
 
-        // ─── Counter Animation ───
-        function animateCounter(el) {
-            const target = parseInt(el.getAttribute('data-count'));
-            const duration = 1500;
-            const step = target / (duration / 16);
-            let current = 0;
-
-            const update = () => {
-                current += step;
-                if (current >= target) {
-                    el.textContent = target;
-                    return;
-                }
-                el.textContent = Math.floor(current);
-                requestAnimationFrame(update);
-            };
-            requestAnimationFrame(update);
-        }
+        $(function() {
+  // 1. SCROLL REVEAL (Left-to-Right)
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        scrollObserver.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.scroll-animate').forEach(el => scrollObserver.observe(el));
+
+  // 2. SLIDER DATA & STATE
+  const services = [
+    { title: "Financial Management", desc: "Transform your workflow with integrated ERP modules. Streamline operations so you can focus on growth.", features: ["Real-time analytics", "Automated workflows", "Secure cloud infrastructure"], btn: "Explore Finance" },
+    { title: "HR Management", desc: "Empower your workforce with intelligent HR solutions. Manage payroll, attendance, and performance in one place.", features: ["Automated payroll", "Performance tracking", "Employee self-service"], btn: "Explore HR" },
+    { title: "Business Analytics", desc: "Make data-driven decisions with powerful analytics. Get insights that optimize operations and drive growth.", features: ["Custom dashboards", "Predictive analytics", "Real-time KPIs"], btn: "Explore Analytics" }
+  ];
+
+  let current = 0;
+  const $slides = $('.service-slide');
+  const total = $slides.length;
+  let autoPlayTimer;
+  let wheelCooldown = false;
+
+  // Build dots
+  for(let i=0; i<total; i++) $('#sliderDots').append(`<div class="slider-dot ${i===0?'active':''}" data-i="${i}"></div>`);
+
+  // Core slide switcher
+  function updateSlide(idx) {
+    if(idx<0) idx=total-1; 
+    if(idx>=total) idx=0;
+    
+    $slides.removeClass('active').eq(idx).addClass('active');
+    $('.slider-dot').removeClass('active').eq(idx).addClass('active');
+    current = idx;
+
+    const s = services[idx];
+    $('.service-title, .service-desc, .service-list, .btn-explore').css('opacity','0');
+    setTimeout(() => {
+      $('#serviceTitle').text(s.title);
+      $('#serviceDesc').text(s.desc);
+      $('#serviceBtn').html(`${s.btn} <i class="fas fa-arrow-right"></i>`);
+      $('#serviceList').html(s.features.map(f => `<li><i class="fas fa-check-circle"></i> ${f}</li>`).join(''));
+      $('.service-title, .service-desc, .service-list, .btn-explore').css('opacity','1');
+    }, 250);
+
+    // Reset auto-play on any interaction
+    clearInterval(autoPlayTimer);
+    startAutoPlay();
+  }
+
+  function startAutoPlay() {
+    autoPlayTimer = setInterval(() => updateSlide(current + 1), 5000);
+  }
+  startAutoPlay();
+
+  // 3. CLICK CONTROLS
+  $('#sliderNext').click(() => updateSlide(current + 1));
+  $('#sliderPrev').click(() => updateSlide(current - 1));
+  $(document).on('click', '.slider-dot', function(){ updateSlide($(this).data('i')); });
+
+  // 4. SCROLL/WHEEL TRIGGER (Desktop & Trackpad)
+  $('.service-carousel').on('wheel', function(e) {
+    if (wheelCooldown) return;
+    
+    const delta = e.originalEvent.deltaY || e.originalEvent.detail;
+    if (Math.abs(delta) < 20) return; // Ignore tiny scrolls
+
+    wheelCooldown = true;
+    if (delta > 0) updateSlide(current + 1); // Scroll down → next
+    else updateSlide(current - 1);           // Scroll up → prev
+
+    setTimeout(() => { wheelCooldown = false; }, 600); // 600ms cooldown
+  });
+});
 
 
 
 
+    </script>
 
+    <script>
+  // Feature Data
+  const features = [
+    {
+      title: "Automated Workflows",
+      img: "https://images.pexels.com/photos/32399732/pexels-photo-32399732.jpeg",
+      bullets: ["Trigger actions based on user behavior", "No-code visual builder", "Real-time sync across platforms"]
+    },
+    {
+      title: "Smart Analytics",
+      img: "https://placehold.co/720x900/dcfce7/166534?text=Analytics",
+      bullets: ["Track engagement in real-time", "Customizable dashboards", "Predictive insights & reporting"]
+    },
+    {
+      title: "Team Collaboration",
+      img: "https://placehold.co/720x900/fef3c7/92400e?text=Collaboration",
+      bullets: ["Shared workspaces & permissions", "Inline comments & approvals", "Role-based access control"]
+    },
+    {
+      title: "Enterprise Security",
+      img: "https://placehold.co/720x900/fee2e2/991b1b?text=Security",
+      bullets: ["SOC 2 Type II compliant", "End-to-end encryption", "Automated audit logs"]
+    },
+    {
+      title: "Seamless Integrations",
+      img: "https://placehold.co/720x900/e0f2fe/0369a1?text=Integrations",
+      bullets: ["500+ native app connectors", "REST & GraphQL APIs", "Webhook & Zapier support"]
+    }
+  ];
 
+  // Render Cards
+  const track = document.getElementById('scrollTrack');
+  track.innerHTML = features.map(f => `
+    <article class="feature-card">
+      <div class="card-image">
+        <img src="${f.img}" alt="${f.title}" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">${f.title}</h3>
+        <ul class="feature-list">
+          ${f.bullets.map(b => `<li><span class="check-icon">✓</span> ${b}</li>`).join('')}
+        </ul>
+        <button class="card-btn">Learn More</button>
+      </div>
+    </article>
+  `).join('');
 
+  // GSAP Setup
+  gsap.registerPlugin(ScrollTrigger);
 
+  const totalCards = features.length;
+  const getScrollEnd = () => {
+    // Calculate exact distance to move so last card centers in viewport
+    const trackWidth = track.scrollWidth;
+    const wrapperWidth = track.parentElement.offsetWidth;
+    return -(trackWidth - wrapperWidth);
+  };
 
+  ScrollTrigger.create({
+    trigger: ".scroll-section",
+    start: "top top",
+    end: "bottom top",
+    scrub: 1,
+    anticipatePin: 1,
+    snap: {
+      snapTo: 1 / (totalCards - 1),
+      duration: { min: 0.25, max: 0.5 },
+      ease: "power2.inOut",
+      inertia: false
+    },
+    invalidateOnRefresh: true,
+    animation: gsap.to(track, {
+      x: getScrollEnd,
+      ease: "none"
+    })
+  });
 
-
-
-
-
-
-
-
-
-
-
-    $(function () {
-        const $nav = $(".glass-nav");
-        const $toggle = $(".menu-toggle");
-        const $collapse = $("#mainNav");
-        const $slides = $(".slide-item");
-        const $dots = $(".slider-dot");
-        const $next = $(".slider-next");
-        const $prev = $(".slider-prev");
-        const $testimonials = $(".testimonial-card");
-        const $testimonialDots = $(".testimonial-dot");
-        const $testimonialNext = $(".testimonial-next");
-        const $testimonialPrev = $(".testimonial-prev");
-        const $revealItems = $(".reveal-on-scroll, .reveal-delay-1, .reveal-delay-2, .reveal-delay-3");
-        let currentSlide = 0;
-        let sliderTimer;
-        let currentTestimonial = 0;
-        let testimonialTimer;
-
-        function syncNavbarState() {
-            $nav.toggleClass("scrolled", $(window).scrollTop() > 20);
-        }
-
-        function handleReveal() {
-            const triggerBottom = $(window).scrollTop() + $(window).height() * 0.88;
-
-            $revealItems.each(function () {
-                const $item = $(this);
-
-                if ($item.offset().top < triggerBottom) {
-                    $item.addClass("is-visible");
-                }
-            });
-        }
-
-        function showSlide(index) {
-            currentSlide = (index + $slides.length) % $slides.length;
-            $slides.removeClass("is-active").eq(currentSlide).addClass("is-active");
-            $dots.removeClass("is-active").eq(currentSlide).addClass("is-active");
-        }
-
-        function startSlider() {
-            clearInterval(sliderTimer);
-            sliderTimer = setInterval(function () {
-                showSlide(currentSlide + 1);
-            }, 4200);
-        }
-
-        function showTestimonial(index) {
-            currentTestimonial = (index + $testimonials.length) % $testimonials.length;
-            $testimonials.removeClass("is-active").eq(currentTestimonial).addClass("is-active");
-            $testimonialDots.removeClass("is-active").eq(currentTestimonial).addClass("is-active");
-        }
-
-        function startTestimonialSlider() {
-            clearInterval(testimonialTimer);
-            testimonialTimer = setInterval(function () {
-                showTestimonial(currentTestimonial + 1);
-            }, 5200);
-        }
-
-        $toggle.on("click", function () {
-            $(this).toggleClass("is-open");
-        });
-
-        $collapse.on("hidden.bs.collapse shown.bs.collapse", function () {
-            $toggle.toggleClass("is-open", $collapse.hasClass("show"));
-        });
-
-        $next.on("click", function () {
-            showSlide(currentSlide + 1);
-            startSlider();
-        });
-
-        $prev.on("click", function () {
-            showSlide(currentSlide - 1);
-            startSlider();
-        });
-
-        $dots.on("click", function () {
-            showSlide(Number($(this).data("slide")));
-            startSlider();
-        });
-
-        $(".banner-slider").on("mouseenter", function () {
-            clearInterval(sliderTimer);
-        }).on("mouseleave", function () {
-            startSlider();
-        });
-
-        $testimonialNext.on("click", function () {
-            showTestimonial(currentTestimonial + 1);
-            startTestimonialSlider();
-        });
-
-        $testimonialPrev.on("click", function () {
-            showTestimonial(currentTestimonial - 1);
-            startTestimonialSlider();
-        });
-
-        $testimonialDots.on("click", function () {
-            showTestimonial(Number($(this).data("testimonial")));
-            startTestimonialSlider();
-        });
-
-        $(".testimonial-slider").on("mouseenter", function () {
-            clearInterval(testimonialTimer);
-        }).on("mouseleave", function () {
-            startTestimonialSlider();
-        });
-
-        $(window).on("scroll", function () {
-            syncNavbarState();
-            handleReveal();
-        });
-
-        syncNavbarState();
-        handleReveal();
-        showSlide(0);
-        startSlider();
-        showTestimonial(0);
-        startTestimonialSlider();
-    });
-
-
-
-    $(document).ready(function () {
-        // Testimonial Slider
-        const $slider = $('#testimonialSlider');
-        const $slides = $('.testimonial-slide');
-        const $dotsContainer = $('.tl-dots');
-        let currentSlide = 0;
-        let autoPlayTimer;
-        const delay = 7000; // 7 seconds
-
-        // Generate dots
-        $slides.each(function (i) {
-            $dotsContainer.append(`<button class="tl-dot${i === 0 ? ' active' : ''}" data-index="${i}" aria-label="Go to testimonial ${i + 1}"></button>`);
-        });
-        const $dots = $('.tl-dot');
-
-        // Navigation functions
-        function goToSlide(index) {
-            if (index < 0) index = $slides.length - 1;
-            if (index >= $slides.length) index = 0;
-
-            $slides.removeClass('active');
-            $slides.eq(index).addClass('active');
-
-            $dots.removeClass('active');
-            $dots.eq(index).addClass('active');
-
-            currentSlide = index;
-        }
-
-        function nextSlide() { goToSlide(currentSlide + 1); }
-        function prevSlide() { goToSlide(currentSlide - 1); }
-
-        // Auto-play
-        function startAutoPlay() {
-            stopAutoPlay();
-            autoPlayTimer = setInterval(nextSlide, delay);
-        }
-
-        function stopAutoPlay() { clearInterval(autoPlayTimer); }
-
-        // Event listeners
-        $('.tl-next').on('click', function () {
-            nextSlide();
-            startAutoPlay();
-        });
-
-        $('.tl-prev').on('click', function () {
-            prevSlide();
-            startAutoPlay();
-        });
-
-        $dots.on('click', function () {
-            const index = $(this).data('index');
-            goToSlide(index);
-            startAutoPlay();
-        });
-
-        // Keyboard navigation
-        $(document).on('keydown', function (e) {
-            if (e.key === 'ArrowRight') { nextSlide(); startAutoPlay(); }
-            if (e.key === 'ArrowLeft') { prevSlide(); startAutoPlay(); }
-        });
-
-        // Pause on hover
-        $('.testimonial-slider-wrapper').on('mouseenter', stopAutoPlay).on('mouseleave', startAutoPlay);
-
-        // Touch/swipe support
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        $slider.on('touchstart', function (e) {
-            touchStartX = e.originalEvent.changedTouches[0].screenX;
-            stopAutoPlay();
-        });
-
-        $slider.on('touchend', function (e) {
-            touchEndX = e.originalEvent.changedTouches[0].screenX;
-            const diff = touchStartX - touchEndX;
-            if (Math.abs(diff) > 50) {
-                if (diff > 0) {
-                    nextSlide();
-                } else {
-                    prevSlide();
-                }
-            }
-            startAutoPlay();
-        });
-
-        // Initialize
-        startAutoPlay();
-    });
-
-
-
+  // Refresh on load & resize
+  window.addEventListener('load', () => ScrollTrigger.refresh());
+  window.addEventListener('resize', () => ScrollTrigger.refresh());
 </script>
-
-<script>
-   $(document).ready(function () {
-
-      // ==========================================
-      // PRELOADER
-      // ==========================================
-      $(window).on('load', function () {
-         setTimeout(function () {
-            $('#preloader').addClass('loaded');
-            animateHero();
-         }, 1500);
-      });
-
-      // Fallback: if load event already fired
-      if (document.readyState === 'complete') {
-         setTimeout(function () {
-            $('#preloader').addClass('loaded');
-            animateHero();
-         }, 1500);
-      }
-
-      // ==========================================
-      // HERO ANIMATION
-      // ==========================================
-      function animateHero() {
-         $('.hero-subtitle').css({
-            'opacity': '1',
-            'transform': 'translateY(0)',
-            'transition': 'all 0.1s ease 0.2s'
-         });
-         $('.hero-title').css({
-            'opacity': '1',
-            'transform': 'translateY(0)',
-            'transition': 'all 0.4s ease 0.3s'
-         });
-         $('.hero-divider').css({
-            'opacity': '1',
-            'transform': 'scaleX(1)',
-            'transition': 'all 0.4s ease 0.4s'
-         });
-         $('.hero-description').css({
-            'opacity': '1',
-            'transform': 'translateY(0)',
-            'transition': 'all 0.4s ease 0.5s'
-         });
-      }
-
-      // ==========================================
-      // NAVBAR SCROLL EFFECT
-      // ==========================================
-      $(window).on('scroll', function () {
-         var scroll = $(window).scrollTop();
-
-         if (scroll > 80) {
-            $('#mainNav').addClass('scrolled');
-         } else {
-            $('#mainNav').removeClass('scrolled');
-         }
-      });
-
-      // ==========================================
-      // REVEAL ON SCROLL
-      // ==========================================
-      function revealOnScroll() {
-         var windowHeight = $(window).height();
-         var scrollTop = $(window).scrollTop();
-
-         $('.reveal, .reveal-left, .reveal-right, .reveal-scale').each(function () {
-            var elementTop = $(this).offset().top;
-            var revealPoint = 120;
-
-            if (scrollTop + windowHeight - revealPoint > elementTop) {
-               $(this).addClass('active');
-            }
-         });
-      }
-
-      $(window).on('scroll', revealOnScroll);
-      revealOnScroll(); // Initial check
-
-      // ==========================================
-      // COUNTER ANIMATION
-      // ==========================================
-  
-      // ==========================================
-      // PARALLAX EFFECT
-      // ==========================================
-      $(window).on('scroll', function () {
-         var scrolled = $(window).scrollTop();
-         var parallaxImg = $('#parallaxImg');
-
-         if (parallaxImg.length) {
-            var parentTop = parallaxImg.parent().offset().top;
-            var parentHeight = parallaxImg.parent().outerHeight();
-
-            if (scrolled + $(window).height() > parentTop && scrolled < parentTop + parentHeight) {
-               var yPos = (scrolled - parentTop) * 0.3;
-               parallaxImg.css('transform', 'translateY(' + yPos + 'px)');
-            }
-         }
-      });
-
-      // ==========================================
-      // SMOOTH SCROLL FOR ANCHOR LINKS
-      // ==========================================
-      $('a[href^="#"]').on('click', function (e) {
-         e.preventDefault();
-         var target = $(this.getAttribute('href'));
-         if (target.length) {
-            $('html, body').animate({
-               scrollTop: target.offset().top - 80
-            }, 800, 'swing');
-         }
-      });
-
-      // ==========================================
-      // MOBILE MENU TOGGLE
-      // ==========================================
-      $('#mobileToggle').on('click', function () {
-         $(this).toggleClass('active');
-         // You can add a mobile menu overlay here
-      });
-
-      // ==========================================
-      // MAGNETIC BUTTON EFFECT
-      // ==========================================
-      $('.btn-luxury').on('mousemove', function (e) {
-         var rect = this.getBoundingClientRect();
-         var x = e.clientX - rect.left - rect.width / 2;
-         var y = e.clientY - rect.top - rect.height / 2;
-
-         $(this).css('transform', 'translate(' + (x * 0.15) + 'px, ' + (y * 0.15) + 'px)');
-      }).on('mouseleave', function () {
-         $(this).css('transform', 'translate(0, 0)');
-      });
-
-      // ==========================================
-      // CURSOR GLOW EFFECT (Desktop Only)
-      // ==========================================
-      if (window.innerWidth > 991) {
-         var $cursor = $('<div class="cursor-glow"></div>').css({
-            'position': 'fixed',
-            'width': '300px',
-            'height': '300px',
-            'borderRadius': '50%',
-            'background': 'radial-gradient(circle, rgba(198,169,108,0.06) 0%, transparent 70%)',
-            'pointer-events': 'none',
-            'z-index': '9998',
-            'transform': 'translate(-50%, -50%)',
-            'transition': 'opacity 0.3s ease'
-         });
-
-         $('body').append($cursor);
-
-         $(document).on('mousemove', function (e) {
-            $cursor.css({
-               'left': e.clientX + 'px',
-               'top': e.clientY + 'px'
-            });
-         });
-      }
-
-   });
-</script> 
-
-
-
-
 </body>
-
-</html>
+</html> 
